@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Price Calculator{% endblock %}
+
+{% block body %}
+    <h1>Price calculator</h1>
+    <h4>Select values in fields below</h4>
+    {{ form(form) }}
+    {% if result %}
+        <div>
+            <h3>Result:</h3>
+            <h2>{{ result }}</h2>
+        </div>
+    {% endif %}
+{% endblock %}

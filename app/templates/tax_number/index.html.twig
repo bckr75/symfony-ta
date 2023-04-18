@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tax Numbers{% endblock %}
+
+{% block body %}
+    <h1>Tax Numbers</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Country</th>
+                <th>Prefix</th>
+                <th>Tax</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tax_number in tax_numbers %}
+            <tr>
+                <td>{{ tax_number.id }}</td>
+                <td>{{ tax_number.country }}</td>
+                <td>{{ tax_number.prefix }}</td>
+                <td>{{ tax_number.tax }}</td>
+                <td>
+                    <a href="{{ path('app_tax_number_show', {'id': tax_number.id}) }}">show</a>
+                    <a href="{{ path('app_tax_number_edit', {'id': tax_number.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_tax_number_new') }}">Create new</a>
+{% endblock %}

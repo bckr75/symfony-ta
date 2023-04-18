@@ -1,0 +1,5 @@
+// Make sure the bootstrap-sass and lato fonts are resolved correctly
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+$lato-font-path: '~lato-font/fonts';
+
+@import "bootstrap";
